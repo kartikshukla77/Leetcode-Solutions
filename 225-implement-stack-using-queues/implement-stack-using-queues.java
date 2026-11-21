@@ -1,9 +1,5 @@
 class MyStack {
-
-     Queue <Integer> queue = new LinkedList<>();
-     Queue <Integer> temp = new LinkedList<>();
-
-
+    Queue <Integer> queue = new LinkedList<>();
 
     public MyStack() {
         
@@ -14,28 +10,29 @@ class MyStack {
     }
     
     public int pop() {
-        while(queue.size()>1){
-            temp.offer(queue.poll());
-        }
-        int ans = queue.poll();
-        while(!temp.isEmpty()){
-            queue.offer(temp.poll());
-        }
-        return ans;
+     
+      int i = 0;
+      while(i< queue.size()){
+         if(i==queue.size()-1){
+            return queue.poll();
+         }
+          queue.offer(queue.poll());
+          i++;
+      }
+      return -1;
     }
     
     public int top() {
-        int ans = -1;
-        while(!queue.isEmpty()){
-            if(queue.size()==1){
-             ans = queue.peek();
-            }
-            temp.offer(queue.poll());
-        }
-        while(!temp.isEmpty()){
-            queue.offer(temp.poll());
-        }
-        return ans;
+      int ans = -1;
+      int i = 0;
+      while(i< queue.size()){
+         if(i==queue.size()-1){
+            ans =  queue.peek();
+         }
+          queue.offer(queue.poll());
+          i++;
+      }
+      return ans;
     }
     
     public boolean empty() {
