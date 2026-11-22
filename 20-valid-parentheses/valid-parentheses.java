@@ -4,7 +4,6 @@ class Solution {
     char B = '[';
     char C = '{';
 
-
     Stack<Character> stack = new Stack<>();
 
     for(int i = 0 ; i<s.length() ; i++){
@@ -29,8 +28,5 @@ class Solution {
        return false;
     }    
 
-
-   
-        
     }
 }
