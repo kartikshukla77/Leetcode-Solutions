@@ -1,5 +1,6 @@
 class Solution {
     public int minAddToMakeValid(String s) {
+        // () )) ((
         if(s.isEmpty()){
             return 0;
         }
